@@ -9,10 +9,8 @@ def plot_scores(axelrod_scores, edward_scores, strategies, k, horizon_name, hori
     plt.xticks([i + 0.2 for i in x], strategies)
     plt.legend()
 
-    # 🔥 Main title
     plt.title("Strategy Performance Comparison")
 
-    # 🔥 Subtitle (this is what you want)
     plt.suptitle(
         f"Edward: {3*k} agents ({k} per strategy)\n"
         f"Horizon: {horizon_name}\n"
@@ -20,8 +18,7 @@ def plot_scores(axelrod_scores, edward_scores, strategies, k, horizon_name, hori
         fontsize=10,
         y=0.98
     )
-
-    # 🔢 Numbers on bars
+    
     for bar in bars1:
         height = bar.get_height()
         plt.text(
