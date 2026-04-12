@@ -1,5 +1,6 @@
-from history import GlobalHistory
-from match import Match
+from .history import GlobalHistory
+from .match import Match
+from collections import defaultdict
 
 class Simulation:
     def __init__(self, population, horizon, total_games):
@@ -33,15 +34,30 @@ class AxelrodSimulation(Simulation):
 class EdwardSimulation(Simulation):
     def run(self):
         self.reset_scores()
+        
+        pair_counts = defaultdict(int)
 
         for _ in range(self.total_games):
             agent_i, agent_j = self.population.get_random_pair()
+            
+            s1 = agent_i.strategy.name
+            s2 = agent_j.strategy.name
+            key = tuple(sorted((s1, s2)))
+            pair_counts[key] += 1
+            
             match = Match(agent_i, agent_j, self.history, self.horizon)
             match.play()
             self.game_count += 1
+            
+        print("\nPAIR COUNTS:")
+        total = sum(pair_counts.values())
 
+        for pair, count in sorted(pair_counts.items()):
+            print(f"{pair}: {count} ({count/total:.3f})")
 
-"""
+        print("Total sampled pairs:", total)
+                
+"""              
 import random
 
 # equal random samples
