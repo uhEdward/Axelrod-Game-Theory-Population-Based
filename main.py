@@ -1,5 +1,5 @@
-from experiment import run_experiment
-from visualizer import plot_scores
+from src.experiment import run_experiment
+from src.visualizer import plot_scores
 
 if __name__ == "__main__":
     k =10
