@@ -1,4 +1,3 @@
-import random
 from history import GlobalHistory
 from match import Match
 
@@ -43,6 +42,8 @@ class EdwardSimulation(Simulation):
 
 
 """
+import random
+
 # equal random samples
 class EdwardSimulation(Simulation):
     def run(self):
