@@ -64,40 +64,6 @@ Together, these extensions transform the model from isolated repeated games into
 
 ---
 
-## Baseline Experiments
-
-To validate the framework, we begin with a simple baseline configuration consisting of three canonical strategies:
-
-- Always Cooperate  
-- Always Defect  
-- Tit-for-Tat  
-
-The goal is to compare how these strategies perform under different interaction and information structures.
-
-### 1. Axelrod Environment (Baseline)
-
-This setting replicates the structure of Axelrod’s original tournament:
-
-- Each strategy is represented by a single agent  
-- All agents play against every other agent (including themselves)  
-- Each pair plays a fixed number of repeated rounds (e.g. 200)  
-- Final scores are aggregated across all pairwise interactions  
-
-This serves as the reference point for all comparisons.
-
-### 2. Population-Based Environment
-
-We extend this setup by introducing a population-based simulation:
-
-- Multiple agents are instantiated per strategy  
-- At each step, two agents are randomly selected from the population  
-- Agents interact with many different opponents over time  
-- Total interactions are matched to the Axelrod setting for fairness  
-
-This transforms the system from fixed pairwise interactions into a dynamic and stochastic environment.
-
----
-
 ## Code Structure
 ```
 src/
