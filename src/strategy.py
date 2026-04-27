@@ -38,6 +38,18 @@ class AlwaysDefect(Strategy):
         return "D"
 
 
+class Alternating(Strategy):
+    name = "Alternating"
+
+    def __init__(self):
+        self.move_count = 0
+
+    def move(self, view):
+        move = "C" if self.move_count % 2 == 0 else "D"
+        self.move_count += 1
+        return move
+
+
 class TitForTat(Strategy):
     name = "TitForTat"
 

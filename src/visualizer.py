@@ -12,7 +12,7 @@ def plot_scores(axelrod_scores, edward_scores, strategies, k, horizon_name, hori
     plt.title("Strategy Performance Comparison")
 
     plt.suptitle(
-        f"Edward: {3*k} agents ({k} per strategy)\n"
+        f"Edward: {len(strategies)*k} agents ({k} per strategy)\n"
         f"Horizon: {horizon_name}\n"
         f"{horizon_desc}",
         fontsize=10,

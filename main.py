@@ -2,7 +2,7 @@ from src.experiment import run_experiment
 from src.visualizer import plot_scores
 
 if __name__ == "__main__":
-    k = 10
+    k = 1
     results = run_experiment(k)
 
     plot_scores(
